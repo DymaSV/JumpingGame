@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Button, ControlLabel } from "react-bootstrap";
+import { Col, Button, ControlLabel, Row } from "react-bootstrap";
 import './GameCanvas.css';
 
 
@@ -39,18 +39,22 @@ class GameCanvas extends Component {
         return (
             <div>
                 <div className="gameCanvas">
-                    <Col componentClass={ControlLabel} sm={2}>
-                        Began
-                    </Col>
-                    <Col sm={2}>
-                        <input id="began" type="text" value={this.state.began} readOnly block />
-                    </Col>
-                    <Col componentClass={ControlLabel} sm={2}>
-                        Time
-                    </Col>
-                    <Col sm={2}>
-                        <input id="time" type="text" value={this.state.time} placeholder="HH:mm" readOnly />
-                    </Col>
+                    <Row>
+                        <Col componentClass={ControlLabel} sm={2}>
+                            Began
+                        </Col>
+                        <Col sm={10}>
+                            <input id="began" type="text" value={this.state.began} readOnly block />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col componentClass={ControlLabel} sm={2}>
+                            Time
+                        </Col>
+                        <Col sm={10}>
+                            <input id="time" type="text" value={this.state.time} placeholder="HH:mm" readOnly block />
+                        </Col>
+                    </Row>
                     {/* <label htmlFor="began">Began</label>
                     <input id="began" type="text" value={this.state.began} readOnly />
                     <label htmlFor="time">Time</label>
@@ -58,7 +62,7 @@ class GameCanvas extends Component {
                     <Col sm={6}>
                         <canvas id="jumpingCanvas" width="480" height="320"></canvas>
                     </Col>
-                    
+
                 </div>
             </div>
         );
